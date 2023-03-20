@@ -17,14 +17,12 @@ public abstract class ShooterClass extends BaseHero{
         if(this.arrows > 0 && this.hp > 0) {
             for (BaseHero unit : team) {
                 if (unit.getInfo().equals("Peasant")) {
-                    continue; // Пропускаем "Peasant" и переходим к следующему персонажу команды.
+                    continue; 
                 }
                 else {
                     if(unit.hp > 0) {
                         System.out.println("Могу стрелять!");
                         this.attack(unit, this.damage);
-                        // this.arrows--;
-                        // System.out.println(toString());
                         break;
                     }
                     else {
@@ -34,16 +32,10 @@ public abstract class ShooterClass extends BaseHero{
             }
         }
         
-        // else {
-        //     System.out.println("Не могу стрелять!");
-        // }
-
-        // 
         System.out.println(toString());
         
         for (BaseHero unit : friends) {
             if (unit.getInfo().equals("Peasant")) {
-                // this.arrows++;
                 break;
             }
             this.arrows--;
